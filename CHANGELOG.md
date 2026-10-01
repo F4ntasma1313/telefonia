@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1 — 2026-10-01
+
+- Esclarece que `setup.sql` já inclui as três migrações e não deve ser seguido pelos arquivos individuais.
+- Adiciona `supabase/verify.sql` para checar a instalação sem modificar dados.
+
 ## 0.1.0 — 2026-10-01
 
 - Criação do projeto NexusCC em TypeScript com arquitetura MVC.

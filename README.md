@@ -1,6 +1,6 @@
 # NexusCC — Telefonia para Call Centers
 
-Plataforma de telefonia com painel React/Next.js, API REST, Asterisk/WebRTC e Supabase. Versão inicial **0.1.0**. Projeto desenvolvido do zero com referência funcional nas telas de filas e agentes fornecidas pelo solicitante.
+Plataforma de telefonia com painel React/Next.js, API REST, Asterisk/WebRTC e Supabase. Versão **0.1.1**. Projeto desenvolvido do zero com referência funcional nas telas de filas e agentes fornecidas pelo solicitante.
 
 ## Executar o painel
 
@@ -14,6 +14,8 @@ Acesse http://localhost:3000. Sem variáveis do Supabase, o painel abre em **dem
 ## Operação real
 
 Siga [o guia de instalação](docs/SETUP.md). É necessário configurar um projeto Supabase e uma central Asterisk em Linux com certificado TLS. Chamadas externas dependem de operadora SIP; não existem credenciais, minutos ou números telefônicos incluídos neste repositório.
+
+No Supabase SQL Editor, execute **apenas** `supabase/setup.sql` na instalação inicial. Ele já contém as três migrações. Para conferir o resultado, execute `supabase/verify.sql`; não rode as migrações individuais depois do bundle.
 
 Recursos implementados no código:
 

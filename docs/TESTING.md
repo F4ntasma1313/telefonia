@@ -38,7 +38,7 @@ O navegador padrão dos testes é Microsoft Edge em modo headless. Em outro sist
 
 ## Registro da verificação local
 
-- 9 testes de regras e banco passaram.
+- 10 testes de regras e banco passaram, incluindo a consulta read-only `supabase/verify.sql`.
 - 2 testes de navegador passaram, incluindo ausência de rolagem horizontal da página em celular.
 - TypeScript, ESLint e build de produção verificados durante a implementação.
 - Supabase Auth respondeu HTTP 200 com a URL e a chave pública fornecidas pelo usuário.

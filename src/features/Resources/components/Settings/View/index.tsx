@@ -26,7 +26,7 @@ export function SettingsView({ app }: ResourcesViewProps) {
         </div>
         <div className="setup-row">
           <span>Versão</span>
-          <b>0.1.0</b>
+          <b>0.1.1</b>
         </div>
         <p>
           O guia de instalação está em docs/SETUP.md no projeto. Configure o Supabase, inicie o

@@ -1,11 +1,12 @@
 # Documentação do projeto
 
-Documentação da versão **0.1.0**, iniciada em 1 de outubro de 2026. Este diretório acompanha a implementação; alterações de contratos, fluxos ou infraestrutura devem atualizar o documento correspondente na mesma tarefa.
+Documentação da versão **0.1.1**, iniciada em 1 de outubro de 2026. Este diretório acompanha a implementação; alterações de contratos, fluxos ou infraestrutura devem atualizar o documento correspondente na mesma tarefa.
 
 | Documento                          | Conteúdo                                         |
 | ---------------------------------- | ------------------------------------------------ |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Organização MVC, tecnologias e responsabilidades |
 | [DATABASE.md](DATABASE.md)         | Tabelas, relações, funções e armazenamento       |
+| [verify.sql](../supabase/verify.sql) | Verificação da instalação do Supabase            |
 | [API.md](API.md)                   | Autenticação, endpoints, payloads e erros        |
 | [TELEPHONY.md](TELEPHONY.md)       | Fluxos de voz, filas, discador e gravação        |
 | [SETUP.md](SETUP.md)               | Preparação local e instalação em Linux           |

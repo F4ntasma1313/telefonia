@@ -148,7 +148,7 @@ export function ConsoleView({ controller: app }: { controller: ConsoleController
             <span className={`badge ${app.demo ? "paused" : "available"}`}>
               {app.demo ? "Ambiente de demonstração" : "Operação real"}
             </span>
-            <span className="version">v0.1.0</span>
+            <span className="version">v0.1.1</span>
           </div>
         </header>
         <main className="content">

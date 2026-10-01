@@ -1,4 +1,4 @@
-# Estado da versão 0.1.0
+# Estado da versão 0.1.1
 
 ## Implementado
 

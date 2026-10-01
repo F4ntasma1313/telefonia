@@ -49,6 +49,14 @@ after(async () => {
   await db.close()
 })
 
+test("verificação confirma a instalação completa sem modificar dados", async () => {
+  const sql = await readFile("supabase/verify.sql", "utf8")
+  const result = await db.query<{ estado: string, itens_pendentes: string }>(sql)
+
+  assert.equal(result.rows[0].estado, "COMPLETO")
+  assert.equal(result.rows[0].itens_pendentes, "")
+})
+
 test("idempotência não duplica chamada e bloqueia outro solicitante", async () => {
   const requestId = "40000000-0000-4000-8000-000000000001"
   const first = await db.query<{ id: string }>("select (enqueue_call($1,'1001',$2,$3)).id", [

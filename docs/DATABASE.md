@@ -1,6 +1,6 @@
 # Banco e armazenamento
 
-Execute os arquivos SQL de `supabase/migrations` em ordem. O schema é destinado a um projeto Supabase dedicado ao NexusCC; a migração restringe permissões do schema público.
+Para instalar pelo SQL Editor, execute apenas `supabase/setup.sql`; ele reúne os arquivos de `supabase/migrations` em ordem. Em seguida, execute `supabase/verify.sql` para confirmar o estado do banco sem alterá-lo. Não execute o bundle e as migrações individuais no mesmo banco. O schema é destinado a um projeto Supabase dedicado ao NexusCC; a instalação restringe permissões do schema público.
 
 | Tabela            | Responsabilidade                                                          |
 | ----------------- | ------------------------------------------------------------------------- |

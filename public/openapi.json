@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "NexusCC API",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "API própria de central de atendimento. Não representa o contrato Vonix. Limite de 180 requisições/minuto por usuário/token. Consulte docs/API.md para permissões e retornos."
   },
   "servers": [

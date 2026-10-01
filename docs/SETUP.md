@@ -15,15 +15,22 @@ Abra `http://127.0.0.1:3000`. Sem Supabase, a demonstração é automática. O m
 
 ## 2. Supabase
 
+**Se você já executou `supabase/setup.sql`:** as três migrações já foram incluídas nessa execução. Não execute novamente os arquivos da pasta `migrations`. O erro `column "owner" of relation "worker_health" already exists` surge ao repetir a segunda migração e não exige apagar o banco. Execute somente [`supabase/verify.sql`](../supabase/verify.sql) no SQL Editor. Se o resultado for `COMPLETO`, prossiga para as variáveis e a criação do administrador. Se for `INCOMPLETO`, consulte a lista `itens_pendentes` antes de aplicar outro SQL.
+
 1. Crie um projeto Supabase dedicado a esta aplicação.
-2. No SQL Editor, execute `supabase/setup.sql` uma única vez em um banco novo. Ele reúne as migrações em uma transação; regenere com `npm run db:bundle` se alterar os SQLs. Alternativamente, execute cada arquivo de `supabase/migrations` em ordem. Não execute as duas opções nem reaplique a instalação inicial. Não use estas migrações em um projeto com outras aplicações: elas restringem grants do schema público.
-3. Copie `.env.example` para `.env.local`.
-4. Preencha URL, anon key e service role key do projeto. A service role é segredo exclusivo do servidor.
-5. Preencha `BOOTSTRAP_EMAIL`, `BOOTSTRAP_PASSWORD` (12 caracteres ou mais) e `BOOTSTRAP_NAME`.
-6. Execute `npm run bootstrap` uma única vez para criar o administrador de ramal 1000.
-7. Remova `BOOTSTRAP_PASSWORD` do ambiente e reinicie o painel.
+2. No SQL Editor de um banco novo, execute **somente** `supabase/setup.sql`. Ele já contém, em ordem, as três migrações. Não execute depois os arquivos individuais. Não use este SQL em um projeto com outras aplicações: ele restringe permissões do schema público.
+3. Execute `supabase/verify.sql` no SQL Editor. Ele somente consulta o banco. Continue quando a coluna `estado` mostrar `COMPLETO`.
+4. Copie `.env.example` para `.env.local`.
+5. Preencha URL, anon key e service role key do projeto. A service role é segredo exclusivo do servidor.
+6. Preencha `BOOTSTRAP_EMAIL`, `BOOTSTRAP_PASSWORD` (12 caracteres ou mais) e `BOOTSTRAP_NAME`.
+7. Execute `npm run bootstrap` uma única vez para criar o administrador de ramal 1000.
+8. Remova `BOOTSTRAP_PASSWORD` do ambiente e reinicie o painel.
+
+Os arquivos de `supabase/migrations` são a fonte versionada para instalações automatizadas; o bundle `setup.sql` existe para a instalação inicial pelo SQL Editor. O SQL Editor não registra automaticamente essas execuções no histórico de migrações do Supabase CLI. Antes de usar `supabase db push` posteriormente nesse mesmo banco, alinhe o histórico conforme a [documentação de migrações do Supabase](https://supabase.com/docs/guides/deployment/database-migrations), para que a CLI não tente reaplicar as migrações iniciais.
 
 Use a conta criada para entrar. Cadastre a fila de entrada 2000, usuários e vínculos de filas. O bootstrap não cria automaticamente configurações reais de operação.
+
+O bootstrap é necessário somente para o primeiro administrador: ainda não existe uma conta autorizada a criar usuários pelo painel. Ele usa `BOOTSTRAP_EMAIL` e `BOOTSTRAP_PASSWORD` para criar essa conta no Supabase Auth e vinculá-la ao ramal 1000. Depois, abra `http://127.0.0.1:3000` e entre com esse e-mail e essa senha. Não há senha padrão no projeto. Os demais usuários são criados pelo administrador no painel. Para explorar a interface sem conta, use o botão de demonstração; esse modo não realiza ligações nem persiste alterações.
 
 As variáveis `NEXT_PUBLIC_*` são incorporadas no build do navegador. Configure-as antes de `npm run build`; ao mudar de projeto Supabase, reconstrua a aplicação.
 
