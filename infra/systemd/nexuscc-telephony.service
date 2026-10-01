@@ -1,0 +1,21 @@
+[Unit]
+Description=NexusCC Telephony
+After=network-online.target asterisk.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=nexuscc
+Group=asterisk
+WorkingDirectory=/opt/nexuscc
+ExecStart=/usr/bin/npm run telephony
+Restart=on-failure
+RestartSec=35
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/etc/asterisk/generated
+UMask=0007
+
+[Install]
+WantedBy=multi-user.target

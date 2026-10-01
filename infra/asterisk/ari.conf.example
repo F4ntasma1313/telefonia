@@ -1,0 +1,8 @@
+[general]
+enabled=yes
+pretty=no
+
+[nexuscc]
+type=user
+read_only=no
+password=REPLACE_WITH_RANDOM_SECRET

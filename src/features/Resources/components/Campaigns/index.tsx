@@ -1,0 +1,1 @@
+export { CampaignsView } from "./View"

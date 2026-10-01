@@ -1,0 +1,11 @@
+node_modules/
+.next/
+.env*
+!.env.example
+*.tsbuildinfo
+coverage/
+infra/asterisk/generated/
+infra/asterisk/keys/
+*.log
+test-results/
+playwright-report/

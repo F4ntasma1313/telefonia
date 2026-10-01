@@ -1,0 +1,1 @@
+export { provisionEndpoints } from "./Controller"
